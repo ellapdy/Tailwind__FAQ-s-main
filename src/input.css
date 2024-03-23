@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[90rem] p-6 w-full mx-auto;
+}
+
+@layer components{
+    .burger__menu{
+        @apply lg:hidden absolute translate-x-[25rem] translate-y-[-4rem];
+    }
+    .burger__menu span{
+        @apply bg-black block rounded-full transition-all;
+    }
+    .burger__menu span:first-child{
+        @apply w-[1.8rem] h-[.2rem] mb-1;
+    }
+    .burger__menu span:nth-child(2) {
+        @apply w-[1.8rem] h-[.2rem] mb-1;
+    }
+    .burger__menu span:nth-child(3) {
+        @apply w-[1.8rem] h-[.2rem] mb-1;
+    }
+    .burger__menu.open span:first-child{
+        @apply transform translate-y-[10px] rotate-[-225deg] transition-all;
+    }
+    .burger__menu.open span:nth-child(2){
+        @apply opacity-0 transition-all;
+    }
+    .burger__menu.open span:last-child{
+        @apply transform translate-y-[-4px] rotate-[225deg] transition-all;
+    }
+
+    /* Header */
+    .header .header__top{
+        @apply hidden lg:flex lg:gap-6;
+    }
+    .header__top ul:nth-child(1){
+        @apply flex gap-2 translate-y-[1rem];
+    }
+    .header__top ul:nth-child(1) i{
+        @apply text-[1.3rem];
+    }
+    .header__top ul:nth-child(1) p{
+        @apply text-[1rem];
+    }
+    .header__top ul:nth-child(2){
+        @apply flex gap-2 translate-y-[1rem];
+    }
+    .header__top ul:nth-child(2) i{
+        @apply text-[1.3rem];
+    }
+    .header__top ul:nth-child(2) p{
+        @apply text-[1rem];
+    }
+    .header__top ul:nth-child(4) a{
+        @apply border-black hover:text-white hover:bg-ygreen;
+    }
+    .header__bottom{
+        @apply mt-4;
+    }
+    .header__bottom .header__navd{
+        @apply hidden lg:flex lg:flex-row;
+    }
+    .header__bottom .header__navd li{
+        @apply px-[3.8rem];
+    }
+    .header__bottom .header__navd li{
+        @apply uppercase text-[1rem] font-thin border-r-2 border-gray-400;
+    }
+    .header__bottom .header__navd li:nth-child(7){
+        @apply border-r-0 border-none;
+    }
+    /* .header{
+        @apply relative;
+    } */
+    .branding{
+        @apply border-b border-black py-2 lg:flex lg:justify-between;
+    }
+    .branding img{
+        @apply w-[12rem];
+    }
+    .header__action{
+        @apply absolute bg-light bg-cover top-[7.2rem] right-0 w-0 px-0 pt-0 transition-all overflow-hidden
+        flex flex-col justify-start text-center lg:static lg:h-fit lg:shadow-none lg:w-fit z-50 lg:hidden h-lvh;
+    }
+    .header__action.open{
+        @apply w-[100%] px-10 pt-10 transition-all lg:hidden;
+    }
+    .header__action .header__navm{
+        @apply text-black font-light text-[1rem] md:flex md:flex-col lg:hidden;
+    }
+    .header__navm li{
+        @apply pb-4;
+    }
+    .header__info .info__btn{
+        @apply flex flex-col gap-2;
+    }
+    .header__info ul:nth-child(1){
+        @apply pb-4;
+    }
+    .header__info ul:nth-child(2){
+        @apply flex py-2 gap-2 text-[1rem] justify-center;
+    }
+    .header__info ul:nth-child(2) i{
+        @apply text-[1.3rem];
+    }
+    .header__info ul:nth-child(3){
+        @apply flex py-2 gap-2 text-[1rem] justify-center pb-4;
+    }
+    .header__info ul:nth-child(3) i{
+        @apply text-[1.3rem];
+    }
+    .header__info ul:nth-child(4){
+        @apply pb-4;
+    }
+    /* Title */
+    .title{
+        @apply text-center text-[2.5rem] font-thin lg:text-7xl lg:pb-8 lg:mt-14;
+    }
+
+    /* About */
+    .about{
+        @apply max-w-[100rem];
+    }
+    .about__wrapper{
+        @apply lg:grid lg:grid-cols-[_1fr,_2fr];
+    }
+    .about__nav{
+        @apply text-center lg:text-left py-10;
+    }
+    .about__nav{
+        @apply text-[1.3rem] font-thin;
+    }
+    .about__nav ul li.active {
+        @apply underline text-lgreen;
+      }
+    .about__title{
+        @apply text-[1.7rem] font-semibold mb-10;
+    }
+    .about__tab{
+        @apply relative h-[100%] lg:h-[0%];
+    }
+    .about__item{
+        @apply absolute opacity-0 transition-all pb-4 md:h-[100%];
+    }
+    .about__item.active {
+        @apply relative opacity-100 transition-all;
+    }
+    .about__item:nth-child(2){
+        @apply md:h-[100%];
+    }
+
+    .links__item ul{
+        @apply max-h-[0rem] overflow-hidden transition-all
+        flex flex-col gap-6 md:max-h-[50rem];
+    }
+    .links__item ul.open{
+        @apply max-h-[50rem] pt-6 transition-all lg:max-h-[0rem];
+    }
+    .links__item{
+        @apply mb-4 bg-lgrey p-[1rem] leading-7;
+    }
+    .links__item h4{
+        @apply flex items-center justify-between
+        font-semibold hover:cursor-pointer;
+    }
+    .links__item h4 i{
+        @apply transition-all;
+    }
+    .links__item h4 i.open{
+        @apply transform rotate-180 
+        transition-all;
+    }
+
+    /* Footer */
+   .footer{
+    @apply bg-lgrey py-4;
+   }
+   .footer__wrapper{
+    @apply lg:flex lg:justify-between lg:pb-4;
+   }
+   .footer .footer__links{
+    @apply hidden lg:grid lg:grid-cols-3 lg:gap-4;
+   }
+   .footer__bottom{
+    @apply border-t-2 border-t-dgrey;
+   }
+   .footer__img{
+    @apply mb-4 lg:w-[12rem];
+   }
+   .footer__btn{
+    @apply text-center pb-14 lg:grid lg:grid-rows-2;
+   }
+   .footer__btn ul{
+    @apply mb-4 lg:mb-[0rem];
+   }
+   .footer__bottom{
+    @apply pt-10 pb-2 text-center;
+   }
+   .footer__bottom__wrapper{
+    @apply lg:flex lg:justify-between;
+   }
+   .footer__bottom ul{
+    @apply justify-center;
+   }
+   .footer__bottom ul:first-child{
+    @apply flex gap-3 md:order-last;
+   }
+   .footer__bottom ul:last-child{
+    @apply md:order-first;
+   }
+   .footer__bottom ul:first-child i{
+    @apply text-[2rem] text-dgrey;
+   }
+}
+
+@layer utilities{
+    .btn{
+        @apply inline-block py-[.5rem] px-[4rem] rounded-md border-transparent border-[1.5px] 
+        text-lg font-normal;
+    }
+    .btn.bg--ygreen{
+        @apply bg-ygreen text-light hover:bg-dyellow;
+    }
+    .btn.bg--dyellow{
+        @apply bg-dyellow text-light;
+    }
+    .btn.bg--fblue{
+        @apply bg-fblue text-light hover:bg-lblue;
+    }
+    .btn.bg--transparent{
+        @apply bg-transparent border-ygreen hover:bg-dyellow;
+    }
+}
